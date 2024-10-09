@@ -74,7 +74,7 @@ Dieses Projekt umfasst einen detaillierten Vergleich zwischen dem neuronalen Net
 
 ## Datensatz
 
-Die von uns verwendeten Daten sind eine Kombination aus gelabelten Aufsätzen aus den DISKO-, Falko- und Merlin-Korpora und den persönlichen Daten (123 Aufsätze - A1) von [Elias](mailto:elias@ahlers.click).
+Die von uns verwendeten Daten sind eine Kombination aus gelabelten Aufsätzen aus den DISKO-, Falko- und Merlin-Korpora und den persönlichen Daten (123 Aufsätze - A1) von [Elias](https://github.com/EliasAhlers).
 
 Der in diesem Projekt verwendete Datensatz enthält Aufsätze in deutscher Sprache mit verschiedenen Merkmalen und Sprachniveaus. Die Sprachniveaus für die deutsche Sprache in Aufsätzen sind in die Kategorien `NCefr` und `Cefr` unterteilt. Innerhalb des NCefr wird diese Kategorie mit drei Stufen (A, B, C) bewertet, während im CEFR eine Einteilung in sechs Stufen (A1, A2, B1, B2, C1, C2) erfolgt.
 
