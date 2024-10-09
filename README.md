@@ -88,7 +88,7 @@ Die von uns verwendeten Daten sind eine Kombination aus gelabelten Aufsätzen au
 | **All_Data_with_features**   | 179 texts  | 306 texts  | 358 texts  | 596 texts  | 426 texts  | 227 texts  |
 | **All_Data_with_features_new** | 179 texts  | 306 texts  | 358 texts  | 552 texts  | 426 texts  | 227 texts  |
 
-**All_Data_with_features_new** : (Optimized for the model: -44 Texts from B2)
+**All_Data_with_features_new** : Total 2048 Texts (Optimized for the model: -44 Texts from B2)
 
 
 Der in diesem Projekt verwendete Datensatz enthält Aufsätze in deutscher Sprache mit verschiedenen Merkmalen und Sprachniveaus. Die Sprachniveaus für die deutsche Sprache in Aufsätzen sind in die Kategorien `NCefr` und `Cefr` unterteilt. Innerhalb des NCefr wird diese Kategorie mit drei Stufen (A, B, C) bewertet, während im CEFR eine Einteilung in sechs Stufen (A1, A2, B1, B2, C1, C2) erfolgt.
