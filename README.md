@@ -74,7 +74,67 @@ Dieses Projekt umfasst einen detaillierten Vergleich zwischen dem neuronalen Net
 
 ## Datensatz
 
-Die von uns verwendeten Daten sind eine Kombination aus gelabelten Aufsätzen aus den DISKO-, Falko- und Merlin-Korpora und den persönlichen Daten (123 Aufsätze - A1) von [Elias](https://github.com/EliasAhlers).
+Die von uns verwendeten Daten sind eine Kombination aus gelabelten Aufsätzen aus den DISKO-, Falko- und Merlin-Korpora und den persönlichen Daten (122 Aufsätze - A1) von [Elias](https://github.com/EliasAhlers).
+
+
+DISKO:
+  A1 - 0 texts
+  A2 - 0 texts
+  B1 - 27 texts
+  B2 - 216 texts
+  C1 - 294 texts
+  C2 - 58 texts
+
+Merlin:
+  A1 - 57 texts
+  A2 - 306 texts
+  B1 - 331 texts
+  B2 - 293 texts
+  C1 - 42 texts
+  C2 - 4 texts
+
+Falko_C2:
+  A1 - 0 texts
+  A2 - 0 texts
+  B1 - 0 texts
+  B2 - 0 texts
+  C1 - 0 texts
+  C2 - 95 texts
+
+Falko_Mixed:
+  A1 - 0 texts
+  A2 - 0 texts
+  B1 - 0 texts
+  B2 - 87 texts
+  C1 - 90 texts
+  C2 - 70 texts
+
+Elias_A1:
+  A1 - 122 texts
+  A2 - 0 texts
+  B1 - 0 texts
+  B2 - 0 texts
+  C1 - 0 texts
+  C2 - 0 texts
+
+
+- Our Data -
+
+All_Data_with_features:
+  A1 - 179 texts
+  A2 - 306 texts
+  B1 - 358 texts
+  B2 - 596 texts
+  C1 - 426 texts
+  C2 - 227 texts
+
+All_Data_with_features_new:  (Optimized for the model: -44 Texts from B2)
+  A1 - 179 texts
+  A2 - 306 texts
+  B1 - 358 texts
+  B2 - 552 texts
+  C1 - 426 texts
+  C2 - 227 texts
 
 Der in diesem Projekt verwendete Datensatz enthält Aufsätze in deutscher Sprache mit verschiedenen Merkmalen und Sprachniveaus. Die Sprachniveaus für die deutsche Sprache in Aufsätzen sind in die Kategorien `NCefr` und `Cefr` unterteilt. Innerhalb des NCefr wird diese Kategorie mit drei Stufen (A, B, C) bewertet, während im CEFR eine Einteilung in sechs Stufen (A1, A2, B1, B2, C1, C2) erfolgt.
 
