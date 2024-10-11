@@ -33,19 +33,19 @@ def check_grammar_languagetool(text):
 def calculate_lexical_features(text):
     doc = nlp(text)
 
-    # Tokens: Total words in the text, including function words: Pronouns, prepositions, conjunctions, articles,
-    # auxiliary verbs, particles, etc.
+    # Tokens: Total words in the text, including function words: Pronouns, prepositions, conjunctions, articles, auxiliary verbs, particles, etc.
     tokens = [token.text for token in doc if token.is_alpha]
 
     # Unique words in the text.
-    types = set(tokens)
+    types = set(tokens) # removes duplicate tokens from the list tokens
 
-    # Lexical Metrics
-
-    # TTR is calculated as the number of unique words divided by the total number of words.
+    # Lexical diversity - Type-Token Ratio (TTR)
+    # TTR is calculated as the number of unique words (types) divided by the total number of words (tokens).
+    # A higher type_token_ratio indicates a greater variety of words used in the text, which can be an indicator of more complex or varied language
     type_token_ratio = (len(types) / len(tokens)) * 100
 
-    # Lexical density
+    # Lexical density is a measure of the proportion of content words (nouns, verbs, adjectives, and adverbs) to the total number of words (tokens).
+    # It is used to assess the complexity and informativeness of the text.
     lexical_tokens = [token for token in doc if
                       token.is_alpha and token.pos_ in ['NOUN', 'VERB', 'ADJ', 'ADV']]  # Main lexical words
     lexical_density = (len(lexical_tokens) / len(tokens)) * 100
@@ -58,7 +58,8 @@ def calculate_readability_scores(text):
     textstat.set_lang("de")
 
     # Flesch Reading Ease The Flesch Reading Ease formula will output a number from 0 to 100 - a higher score
-    # indicates easier reading. Score Difficulty: 90-100 Very Easy - 80-89 Easy - 70-79 Fairly Easy - 60-69 Standard
+    # indicates easier reading.
+    # Score Difficulty: 90-100 Very Easy - 80-89 Easy - 70-79 Fairly Easy - 60-69 Standard
     # 50-59 Fairly Difficult - 30-49 Difficult - 0-29 Very Confusing
     flesch_reading_ease = textstat.flesch_reading_ease(text)
 
@@ -105,3 +106,108 @@ df['Wiener_Sachtextformel_Average'] = wiener_sachtextformel_average_list
 # df['Wiener_Sachtextformel_2'] = wiener_sachtextformel_2_list
 # df['Wiener_Sachtextformel_3'] = wiener_sachtextformel_3_list
 # df['Wiener_Sachtextformel_4'] = wiener_sachtextformel_4_list
+
+# Save the updated dataframe
+df.to_csv('/Users/nurhayataltunok/PycharmProjects/CERF-German-Deep Learning/All_Data_with_features.csv', index=False)
+
+# ____________________________________________________________________________________________________________________________________
+
+# Load your dataset
+df = pd.read_csv('All_Data_with_features.csv')
+
+# Calculate the frequency of each CEFR level
+cefr_frequency = df['Cefr'].value_counts()
+
+# Print the frequency
+print(cefr_frequency)
+
+# ____________________________________________________________________________________________________________________________________
+# Load your dataset
+df = pd.read_csv('All_Data_with_features.csv')
+
+# Filter out 44 elements from the rows where the CEFR level is 'B2'
+b2_rows = df[df['Cefr'] == 'B2']
+remaining_b2_rows = b2_rows.iloc[44:]  # Keep all but the first 44 rows
+
+# Combine the remaining B2 rows with the rest of the dataset
+df_filtered = pd.concat([df[df['Cefr'] != 'B2'], remaining_b2_rows])
+
+# Save the modified dataset
+df_filtered.to_csv('All_Data_with_features_new.csv', index=False)
+
+# ____________________________________________________________________________________________________________________________________
+
+# Read the CSV file into a DataFrame
+df = pd.read_csv('All_Data_with_features_new.csv')
+
+# Create a new column 'NCefr' by extracting the letter part of the 'Cefr' column
+df['NCefr'] = df['Cefr'].str.extract(r'([A-Z]+)')
+
+# Insert the new column before the 'Cefr' column
+cols = df.columns.tolist()
+cols.insert(cols.index('Cefr'), cols.pop(cols.index('NCefr')))
+df = df[cols]
+
+# Save the modified DataFrame back to the CSV file
+df.to_csv('All_Data_with_features_new.csv', index=False)
+
+# ____________________________________________________________________________________________________________________________________
+
+# Define the function to count levels in a CSV file
+def count_levels(file_path):
+    df = pd.read_csv(file_path)
+    level_counts = df['Cefr'].value_counts()
+    return level_counts
+
+
+# List of files to process
+files = [
+    'Whole_Data/DISKO_Testdaf.csv',
+    'Whole_Data/Falko_C2.csv',
+    'Whole_Data/Elias_A1.csv',
+    'Whole_Data/Falko_Mixed.csv',
+    'Whole_Data/Merlin.csv'
+]
+
+# Dictionary to store the results
+results = {}
+
+# Process each file
+for file in files:
+    level_counts = count_levels(file)
+    results[file] = level_counts
+
+# Print the results
+for file, counts in results.items():
+    print(f"{file}:")
+    for level in ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']:
+        print(f"  {level} - {counts.get(level, 0)} texts")
+
+
+# ____________________________________________________________________________________________________________________________________
+
+# Define the function to count levels in a CSV file
+def count_levels(file_path):
+    df = pd.read_csv(file_path)
+    level_counts = df['Cefr'].value_counts()
+    return level_counts
+
+# List of files to process
+files = [
+    'All_Data_with_features.csv',
+    'All_Data_with_features_new.csv'
+]
+
+# Dictionary to store the results
+results = {}
+
+# Process each file
+for file in files:
+    level_counts = count_levels(file)
+    results[file] = level_counts
+
+# Print the results
+for file, counts in results.items():
+    print(f"{file}:")
+    for level in ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']:
+        print(f"  {level} - {counts.get(level, 0)} texts")
