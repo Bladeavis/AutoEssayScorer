@@ -1,4 +1,4 @@
-# AutoEssayScorer
+# Automatic Prediction of Language Proficiency (CEFR Levels) on German Data with Linguistic Features
 Dieses Repository enthält ein neuronales Netz zur automatisierten Aufsatzbewertung, das mit einem LSTM-Modell verglichen wird. Ziel ist es, die Genauigkeit und Effizienz der automatisierten Bewertung zu verbessern.
 
 
