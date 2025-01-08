@@ -98,7 +98,7 @@ The final combined dataset, named **DataCombined**, initially consisted of 2,092
 
 ---
 
-## ## References
+## References
 
 1. **Julia Hancke. (2013):** Automatic prediction of CEFR proficiency levels based on linguistic features of learner language. Master’s thesis, University of Tübingen.
 2. **Edit Szügyi, Sören Etler, Andrew Beaton, and Manfred Stede. (2019):** Automated assessment of language proficiency on German data. *Proceedings of the 15th Conference on Natural Language Processing (KONVENS)*, pages 30–37. University of Potsdam.
