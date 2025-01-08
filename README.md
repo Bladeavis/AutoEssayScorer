@@ -12,7 +12,8 @@ This project explores the use of deep learning models for automatically classify
 
 ## Dataset
 
-The data I used is a combination of labeled essays from the DISKO, Falko and Merlin corpora and the personally generated dataset by [Elias](https://github.com/EliasAhlers).
+The dataset used in this project is a combination of labeled essays sourced from the **DISKO**, **Falko**, and **Merlin** corpora, along with a custom dataset personally created by  [Elias](https://github.com/EliasAhlers).
+
 
 | Dataset                     | A1         | A2         | B1         | B2         | C1         | C2         |
 |-----------------------------|------------|------------|------------|------------|------------|------------|
