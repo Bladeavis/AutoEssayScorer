@@ -1,120 +1,108 @@
 # Automatic Prediction of Language Proficiency (CEFR Levels) on German Data with Linguistic Features
-Dieses Repository enthält ein neuronales Netz zur automatisierten Aufsatzbewertung, das mit einem LSTM-Modell verglichen wird. Ziel ist es, die Genauigkeit und Effizienz der automatisierten Bewertung zu verbessern.
 
+This project explores the use of deep learning models for automatically classifying German text into proficiency levels as defined by the Common European Framework of Reference for Languages (CEFR). The study compares two machine learning models: a Feedforward Neural Network (FFNN) and a Long Short-Term Memory (LSTM) network, evaluating their performance across multiple datasets and linguistic features.
 
-## Inhaltsverzeichnis
+## Overview
 
-- [Überblick](#überblick)
-- [Funktionen](#funktionen)
-- [Installation](#installation)
-- [Verwendung](#verwendung)
-- [Modellvergleich](#modellvergleich)
-- [Datensatz](#datensatz)
-- [Ergebnisse](#ergebnisse)
-- [Kontakt](#kontakt)
+- **Objective:** Classify German texts into CEFR levels (A1–C2) using linguistic features.
+- **Applications:** Language learning platforms, educational assessments, and personalized learning tools.
+- **Key Features:** Grammatical, lexical, readability, and syntactic features for text analysis.
 
-## Überblick
+---
 
-Die automatisierte Aufsatzbewertung ist eine Anwendung der natürlichen Sprachverarbeitung (NLP), die darauf abzielt, die Qualität geschriebener Aufsätze durch maschinelle Lernalgorithmen zu bewerten. Dieses Projekt konzentriert sich auf den Aufbau eines neuronalen Netzwerkmodells zur Bewertung von Aufsätzen und den Vergleich seiner Leistung mit einem LSTM-basierten Ansatz.
+## Dataset
 
-## Funktionen
-
-- **Neuronales Netzwerkmodell**: Implementierung eines neuronalen Netzwerks zur Aufsatzbewertung.
-- **LSTM-Modellvergleich**: Evaluierung und Vergleich des neuronalen Netzwerkmodells mit einem LSTM-Modell.
-- **Automatisierte Bewertung**: Das Modell dient der Bewertung von Aufsätzen gemäß den Niveaustufen des CEFR.
-
-## Installation
-
-Um das Projekt lokal einzurichten, folgen Sie diesen Schritten:
-
-1. **Repository klonen**:
-    ```bash
-    git clone https://github.com/yourusername/AutoEssayScorer.git
-    cd AutoEssayScorer
-    ```
-
-2. **Erforderliche Pakete installieren**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. **Datensatz herunterladen**:
-
-
-## Verwendung
-
-Nachdem die Umgebung eingerichtet ist, können Sie mit dem Training der Modelle beginnen:
-
-1. **Neuronales Netzwerkmodell trainieren**:
-    ```bash
-    python Beispiel
-    ```
-
-2. **LSTM-Modell trainieren**:
-    ```bash
-    python Beispiel
-    ```
-
-3. **Modelle evaluieren**:
-    ```bash
-    python Beispiel
-    ```
-
-4. **Ergebnisse visualisieren**:
-    ```bash
-    python Beispiel
-    ```
-
-## Modellvergleich
-
-Dieses Projekt umfasst einen detaillierten Vergleich zwischen dem neuronalen Netzwerk und den LSTM-Modellen. Der Vergleich konzentriert sich auf:
-
-- **Genauigkeit**: ...
-- **Effizienz**: ...
-
-## Datensatz
-
-Die von uns verwendeten Daten sind eine Kombination aus gelabelten Aufsätzen aus den DISKO-, Falko- und Merlin-Korpora und den persönlichen Daten (122 Aufsätze - A1) von [Elias](https://github.com/EliasAhlers).
+The data I used is a combination of labeled essays from the DISKO, Falko and Merlin corpora and the personally generated dataset by [Elias](https://github.com/EliasAhlers).
 
 | Dataset                     | A1         | A2         | B1         | B2         | C1         | C2         |
 |-----------------------------|------------|------------|------------|------------|------------|------------|
 | **Merlin**                   | 57 texts   | 306 texts  | 331 texts  | 293 texts  | 42 texts   | 4 texts    |
-| **Falko_C2**                 | 0 texts    | 0 texts    | 0 texts    | 0 texts    | 0 texts    | 95 texts   |
-| **Falko_Mixed**              | 0 texts    | 0 texts    | 0 texts    | 87 texts   | 90 texts   | 70 texts   |
-| **Elias_A1**                 | 122 texts  | 0 texts    | 0 texts    | 0 texts    | 0 texts    | 0 texts    |
+| **FalkoC2**                  | 0 texts    | 0 texts    | 0 texts    | 0 texts    | 0 texts    | 95 texts   |
+| **FalkoMixed**               | 0 texts    | 0 texts    | 0 texts    | 87 texts   | 90 texts   | 70 texts   |
+| **AhlersA1**                 | 122 texts  | 0 texts    | 0 texts    | 0 texts    | 0 texts    | 0 texts    |
 | **DISKO**                    | 0 texts    | 0 texts    | 27 texts   | 216 texts  | 294 texts  | 58 texts   |
 |                              |            |            |            |            |            |            |
-| **Our Data**                 |            |            |            |            |            |            |
-| **All_Data_with_features**   | 179 texts  | 306 texts  | 358 texts  | 596 texts  | 426 texts  | 227 texts  |
-| **All_Data_with_features_new** | 179 texts  | 306 texts  | 358 texts  | 552 texts  | 426 texts  | 227 texts  |
-
-**All_Data_with_features_new** : Total 2048 Texts (Optimized for the model: -44 Texts from B2)
+| **My Data**                  |            |            |            |            |            |            |
+| **DataCombined**             | 179 texts  | 306 texts  | 358 texts  | 596 texts  | 426 texts  | 227 texts  |
+| **DataCleanUP**              | 179 texts  | 306 texts  | 358 texts  | 552 texts  | 426 texts  | 227 texts  |
 
 
-Der in diesem Projekt verwendete Datensatz enthält Aufsätze in deutscher Sprache mit verschiedenen Merkmalen und Sprachniveaus. Die Sprachniveaus für die deutsche Sprache in Aufsätzen sind in die Kategorien `NCefr` und `Cefr` unterteilt. Innerhalb des NCefr wird diese Kategorie mit drei Stufen (A, B, C) bewertet, während im CEFR eine Einteilung in sechs Stufen (A1, A2, B1, B2, C1, C2) erfolgt.
+Data is categorized into six CEFR levels `Cefr` (A1, A2, B1, B2, C1, C2) and further grouped into three broader categories `NCefr` (A, B, C).
 
-### Merkmale des Datensatzes:
-
-- **NCefr & Cefr**: Sprachniveaus der Aufsätze
-- **Text**: Aufsätze
-- **Grammar Errors**: Anzahl der Grammatikfehler im Aufsatz, ermittelt durch das Tool `LanguageTool`.
-- **Type Token Ratio**: Verhältnis der einzigartigen Wörter (Types) zu den gesamten Wörtern (Tokens) im Text.
-- **Lexical Density**: Lexikalische Dichte, die das Verhältnis von Inhaltswörtern zu Funktionswörtern misst.
-- **Flesch Reading Ease**: Lesbarkeitsindex nach Flesch, angepasst an die deutsche Sprache.
-- **Wiener Sachtextformel Average**: Ein weiterer Lesbarkeitsindex, spezifisch für deutsche Texte.
-
-Diese Merkmale werden verwendet, um die Qualität, Komplexität und Lesbarkeit der Essays zu bewerten.
+**Final Dataset Statistics:**
+- Total essays: 2,048 (after preprocessing)
+- Features: 21 linguistic and structural features
 
 
-## Ergebnisse
+## Models and Methodology
 
-Das Projekt liefert Ergebnisse basierend auf:
+### Feedforward Neural Network (FFNN)
+- **Architecture:**
+  - Two hidden layers with ReLU activation
+  - Dropout regularization
+  - Softmax output
+- **Optimizer:** Adam (learning rate: 0.001)
+- **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score
 
-- **Modellgenauigkeit**: 
-- **Trainingszeit**: 
-- **Ressourcennutzung**: 
+### Long Short-Term Memory (LSTM)
+- **Architecture:**
+  - LSTM layers with dropout
+  - Fully connected layer
+  - Softmax output
+- **Optimizer:** Adam (learning rate: 0.001)
+
+### Preprocessing Steps
+1. **Text Features:** TF-IDF (5,000 features)
+2. **Numerical Features:** Normalization with StandardScaler
+3. **Data Splits:** 60% training, 20% validation, 20% testing
+
+---
+
+## Results
+
+### Performance Metrics
+
+| Task       | Model | Accuracy | Precision | Recall | F1-Score |
+|------------|-------|----------|-----------|--------|----------|
+| 3 Levels   | FFNN  | 82.4%    | 82.5%     | 82.4%  | 82.4%    |
+| 3 Levels   | LSTM  | 83.4%    | 83.6%     | 83.4%  | 83.2%    |
+| 6 Levels   | FFNN  | 71.2%    | 72.4%     | 71.2%  | 71.0%    |
+| 6 Levels   | LSTM  | 69.7%    | 70.4%     | 69.7%  | 69.5%    |
+
+---
+
+## Key Insights
+- **3-Level Task:** LSTM outperformed FFNN, particularly in distinguishing beginner (A-level) texts.
+- **6-Level Task:** FFNN achieved better performance due to its ability to handle overlapping features.
+
+---
+
+## Challenges and Limitations
+
+1. Difficulty in distinguishing neighboring levels (e.g., B1 vs. B2).
+2. Misclassification due to overlapping linguistic features.
+3. Lack of advanced architectures like transformers.
+
+---
+
+## Future Work
+
+- Experiment with transformer-based models (e.g., BERT, XLM-RoBERTa).
+- Explore additional features like discourse markers and pragmatic cues.
+- Refine datasets to better capture learner-specific nuances.
+
+---
+
+## ## References
+
+1. **Julia Hancke. (2013):** Automatic prediction of CEFR proficiency levels based on linguistic features of learner language. Master’s thesis, University of Tübingen.
+2. **Edit Szügyi, Sören Etler, Andrew Beaton, and Manfred Stede. (2019):** Automated assessment of language proficiency on German data. *Proceedings of the 15th Conference on Natural Language Processing (KONVENS)*, pages 30–37. University of Potsdam.
+3. **Jeanine Treffers-Daller, Phil Parslow, and Sara Williams. (2018):** Back to basics: How measures of lexical diversity can help discriminate between CEFR levels. *Applied Linguistics*, 39(3):302–327.
+4. **Zarah Weiss and Detmar Meurers. (2018):** Modeling the readability of German targeting adults and children. *27th International Conference on Computational Linguistics (Coling 2018)*, pages 303–313.
 
 
-## Kontakt
+---
 
-Bei Fragen oder für Unterstützung kontaktieren Sie bitte [Nurhayat Altunok](mailto:nualt100@uni-duesseldorf.de).
+## Contact
+
+For questions or assistance, please contact [Nurhayat Altunok](mailto:nualt100@uni-duesseldorf.de).
