@@ -104,6 +104,7 @@ The final combined dataset, named **DataCombined**, initially consisted of 2,092
 2. **Edit Szügyi, Sören Etler, Andrew Beaton, and Manfred Stede. (2019):** Automated assessment of language proficiency on German data. *Proceedings of the 15th Conference on Natural Language Processing (KONVENS)*, pages 30–37. University of Potsdam.
 3. **Jeanine Treffers-Daller, Phil Parslow, and Sara Williams. (2018):** Back to basics: How measures of lexical diversity can help discriminate between CEFR levels. *Applied Linguistics*, 39(3):302–327.
 4. **Zarah Weiss and Detmar Meurers. (2018):** Modeling the readability of German targeting adults and children. *27th International Conference on Computational Linguistics (Coling 2018)*, pages 303–313.
+5. **Wisniewski, K., Muntschick, E., Portmann, A. (in Vorb.).** Das Lernerkorpus DISKO. In Wisniewski, K., Lenhard, W., Möhring, J., Spiegel, L. (Hg.). Sprache und Studienerfolg bei Bildungsausländer/-innen. Münster: Waxmann.
 
 
 ---
