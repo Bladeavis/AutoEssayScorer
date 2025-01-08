@@ -30,6 +30,10 @@ The dataset used in this project is a combination of labeled essays sourced from
 
 Data is categorized into six CEFR levels `Cefr` (A1, A2, B1, B2, C1, C2) and further grouped into three broader categories `NCefr` (A, B, C).
 
+### Data Processing
+
+The final combined dataset, named **DataCombined**, initially consisted of 2,092 essays. To balance the data for machine learning purposes, 44 essays from the B2 level were removed due to an overrepresentation at this level. This preprocessing step reduced the dataset to 2,048 essays, resulting in the final dataset named **DataCleanUP**.
+
 **Final Dataset Statistics:**
 - Total essays: 2,048 (after preprocessing)
 - Features: 21 linguistic and structural features
