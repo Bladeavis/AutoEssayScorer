@@ -112,3 +112,6 @@ The final combined dataset, named **DataCombined**, initially consisted of 2,092
 ## Contact
 
 For questions or assistance, please contact [Nurhayat Altunok](mailto:nualt100@uni-duesseldorf.de).
+
+Nurhayat Altunok. 2025. Automatic Prediction of Language Proficiency (CEFR Levels) on German Data with Linguistic Features. Term Paper, Heinrich-Heine-Universität Düsseldorf, January 13, 2025.
+
