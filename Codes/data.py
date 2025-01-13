@@ -303,7 +303,7 @@ def print_error_types(text):
 # They are extracted from the Total_Errors column, these errors cannot be considered as right, 
 # because the text in the dataset created with those unnecessary whitespaces. They are not real errors from the language learners.
 
-# Examples of errors extracted from the dataset:
+# Examples of the errors:
 
 Error: Vor dem Punkt sollte kein Leerzeichen stehen.
 Context: ...en 44 % Haushalts drei und mehr Personen . In 2015 war es wenig - nur 24 % . Wie s...
