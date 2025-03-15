@@ -12,7 +12,7 @@ This project explores the use of deep learning models for automatically classify
 
 ## Dataset
 
-The dataset used in this project is a combination of labeled essays sourced from the **DISKO**, **Falko**, and **Merlin** corpora, along with a custom dataset personally created by  [Elias](https://github.com/EliasAhlers).
+The dataset used in this project is a combination of labeled essays sourced from the **DISKO**, **Falko**, and **Merlin** corpora, along with a custom dataset personally created by  [Elias-Leander Ahlers](https://github.com/EliasAhlers).
 
 
 | Dataset                     | A1         | A2         | B1         | B2         | C1         | C2         |
@@ -107,7 +107,7 @@ The final combined dataset, named **DataCombined**, initially consisted of 2,092
 5. **Wisniewski, K., Muntschick, E., Portmann, A. (in Vorb.).** Das Lernerkorpus DISKO. In Wisniewski, K., Lenhard, W., Möhring, J., Spiegel, L. (Hg.). Sprache und Studienerfolg bei Bildungsausländer/-innen. Münster: Waxmann.
 6. Humboldt-Universität zu Berlin. 2024. Falko-Korpus: Forschungs- und Lernerkorpus.
 7. MERLIN-Projekt. 2014.
-8. Elias Ahlers. Data: 122 text CEFR A1.
+8. [Elias-Leander Ahlers](https://github.com/EliasAhlers). Data: 122 text CEFR A1.
 
 ---
 
